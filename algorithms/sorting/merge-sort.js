@@ -15,13 +15,17 @@ const merge = (arr1, arr2) => {
   }
 
   if (tracker1 != arr1.length) {
-    console.log("loop arr 1");
+    for (let i = tracker1; i < arr1.length; i++) {
+      mergedArr.push(arr1[i]);
+    }
   }
   if (tracker2 != arr2.length) {
-    console.log("loop arr 2");
+    for (let j = tracker2; j < arr2.length; j++) {
+      mergedArr.push(arr2[j]);
+    }
   }
 
   return mergedArr;
 };
 
-console.log(merge([9, 34, 78], [1, 11, 50, 60]));
+console.log(merge([9, 34, 78, 79], [1, 11, 50, 60, 120, 145]));
