@@ -1,8 +1,9 @@
 const mergeSort = (arr) => {
-  // base case
-  if (arr.length <= 1) {
-    return arr;
-  }
+  if (arr.length <= 1) return arr;
+  let mid = Math.ceil(arr.length / 2);
+  let left = mergeSort(arr.slice(0, mid));
+  let right = mergeSort(arr.slice(mid));
+  return merge(left, right);
 };
 
 // merge together 2 sorted arrays
@@ -35,3 +36,5 @@ const merge = (arr1, arr2) => {
 
   return mergedArr;
 };
+
+console.log(mergeSort([8, 34, 12, 71, 29, 2]));
